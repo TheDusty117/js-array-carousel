@@ -21,7 +21,7 @@ body{
 	position: relative;
 }
 
-.carousel .carousel_arrow {
+.carousel .carousel-arrow {
 	position: absolute;
 	font-size: 40px;
 	color: white;
@@ -29,10 +29,10 @@ body{
 	transform: translateY(-50%);
 }
 
-.carousel .carousel_arrow.arrow-left {
+.carousel .carousel-arrow.arrow-left {
 	left: 20px;
 }
 
-.carousel .carousel_arrow.arrow-right {
+.carousel .carousel-arrow.arrow-right {
 	right: 20px;
 }
