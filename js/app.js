@@ -60,7 +60,7 @@ rightBtnElement.addEventListener('click', function() {
   
   let indexEnough= ''
 
-  if (iActiveSlide < 4) {
+  if (iActiveSlide < iActiveSlide[6]) {
     iActiveSlide = indexEnough
   }
 
