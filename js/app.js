@@ -74,7 +74,7 @@ leftBtnElement.addEventListener('click', function() { //la slide attiva deve ess
 
 // FATTO, ora deve ripetersi per 5 volte, procedere con un ciclo for?
 
-for (i = 0; i < 6; i++ ) {
+for (i = 0; i < 1; i++ ) {
   
   const divAdd = document.createElement('div');
   divAdd.className = 'slide active';
@@ -86,6 +86,74 @@ for (i = 0; i < 6; i++ ) {
   const img = document.createElement("img");
   img.src = "./img/image1.0.jpg";
   document.getElementById('slide').appendChild(img);
+  
+
+
+}
+
+for (i = 0; i < 1; i++ ) {
+  
+  const divAdd = document.createElement('div');
+  divAdd.className = 'slide';
+  divAdd.id = 'slide1';
+  
+  
+  document.getElementById('carousel').appendChild(divAdd)
+  
+  const img = document.createElement("img");
+  img.src = "./img/image2.0.jpg";
+  document.getElementById('slide1').appendChild(img);
+  
+
+
+}
+
+for (i = 0; i < 1; i++ ) {
+  
+  const divAdd = document.createElement('div');
+  divAdd.className = 'slide';
+  divAdd.id = 'slide2';
+  
+  
+  document.getElementById('carousel').appendChild(divAdd)
+  
+  const img = document.createElement("img");
+  img.src = "./img/image3.0.jpg";
+  document.getElementById('slide2').appendChild(img);
+  
+
+
+}
+
+for (i = 0; i < 1; i++ ) {
+  
+  const divAdd = document.createElement('div');
+  divAdd.className = 'slide';
+  divAdd.id = 'slide3';
+  
+  
+  document.getElementById('carousel').appendChild(divAdd)
+  
+  const img = document.createElement("img");
+  img.src = "./img/image4.0.jpg";
+  document.getElementById('slide3').appendChild(img);
+  
+
+
+}
+
+for (i = 0; i < 1; i++ ) {
+  
+  const divAdd = document.createElement('div');
+  divAdd.className = 'slide';
+  divAdd.id = 'slide4';
+  
+  
+  document.getElementById('carousel').appendChild(divAdd)
+  
+  const img = document.createElement("img");
+  img.src = "./img/image5.0.jpg";
+  document.getElementById('slide4').appendChild(img);
   
 
 
