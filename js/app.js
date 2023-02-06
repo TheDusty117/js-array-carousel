@@ -24,13 +24,13 @@ let iActiveSlide = 0
 //e prendere le due chevron, su queste ultime dovro' dargli un event listener, che al click mi faranno
 //compiere un'azione.
 
-const slideElement = document.getElementsByClassName('slide') //prendo tutti gli elementi con classe slide.
+const slideElements = document.getElementsByClassName('slide') //prendo tutti gli elementi con classe slide.
 
 const leftBtnElement = document.querySelector('.arrow-left')
 
 const rightBtnElement = document.querySelector('.arrow-right')
 
-console.log(slideElement)
+console.log(slideElements)
 console.log(leftBtnElement, rightBtnElement)
 
 // FUNZIONALITA' AL CLICK DEL BOTTONE DESTRO (PER ANDARE AVANTI)
@@ -39,4 +39,22 @@ console.log(leftBtnElement, rightBtnElement)
 //classe giusta dell'elemento HTML
 rightBtnElement.addEventListener('click', function() {
   console.log('slide attuale', iActiveSlide)
+
+  //dichiaro che currentSlide = a slideElements con indice di valore iActiveSlide ovvero 0------
+  let currentSlide = slideElements[iActiveSlide]
+  
+  // togliere la classe active dalla prima slide
+  currentSlide.classList.remove('active')
+
+  //incrementare indice per farla passare alla prossima
+  iActiveSlide += 1
+
+  //dichiaro che nextSlide = a slideElements[iActiveSlide] e verra' aggiunto incremento qui sopra ad iActiveSlide,
+  //che aumentera' ogni volta al click di 1 facendo scorrere le immagini
+
+  let nextSlide = slideElements[iActiveSlide]
+
+  //aggiungere la classe active tolta in precedenza -vedi su- remove
+
+  nextSlide.classList.add('active')
 })
