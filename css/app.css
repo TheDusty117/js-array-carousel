@@ -1,5 +1,7 @@
 body{
-  background-color: teal;
+  background-image: url(../img/ancient\ map\ travel.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .slide img {
@@ -7,6 +9,11 @@ body{
 	aspect-ratio: 16/9;
 	object-fit: cover;
 	object-position: center;
+}
+
+img{
+  border-radius: 30px;
+  border: 10px solid black;
 }
 
 .slide.active {

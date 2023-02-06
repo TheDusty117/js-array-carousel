@@ -74,18 +74,22 @@ leftBtnElement.addEventListener('click', function() { //la slide attiva deve ess
 
 // FATTO, ora deve ripetersi per 5 volte, procedere con un ciclo for?
 
+//RIUSCITO!!! trial and error, ho dato un ciclo for per immagine, associando ad essa anche un id diverso,
+// ad esempio slide0 slide1 slide2 slide3 slide4 slide5, in modo da generare tramite id 5 div diversi con img scrn e
+// conseguente link alla cartella e poi all'immagine.
+
 for (i = 0; i < 1; i++ ) {
   
   const divAdd = document.createElement('div');
   divAdd.className = 'slide active';
-  divAdd.id = 'slide';
+  divAdd.id = 'slide0';
   
   
   document.getElementById('carousel').appendChild(divAdd)
   
   const img = document.createElement("img");
   img.src = "./img/image1.0.jpg";
-  document.getElementById('slide').appendChild(img);
+  document.getElementById('slide0').appendChild(img);
   
 
 
