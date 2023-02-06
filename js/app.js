@@ -57,4 +57,29 @@ rightBtnElement.addEventListener('click', function() {
   //aggiungere la classe active tolta in precedenza -vedi su- remove
 
   nextSlide.classList.add('active')
+  
+  let indexEnough= ''
+
+  if (iActiveSlide < 4) {
+    iActiveSlide = indexEnough
+  }
+
 })
+
+
+
+// FUNZIONALITA' AL CLICK DEL BOTTONE SINISTRO (PER ANDARE INDIETRO)
+// stesso processo inverso, ovvero sottrarre la classe 'active' e aggiungerla all'elemento precedente
+
+// leftBtnElement.addEventListener('click', function() {
+  
+//   let currentSlide = slideElements[iActiveSlide]
+
+//   currentSlide.classList.remove('active')
+
+//   iActiveSlide -= 1
+
+//   let previousSlide = slideElements[iActiveSlide]
+
+//   previousSlide.classList.add('active')
+// })
