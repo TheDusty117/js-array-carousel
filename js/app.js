@@ -40,7 +40,7 @@ console.log(leftBtnElement, rightBtnElement)
 rightBtnElement.addEventListener('click', function() {
   console.log('slide attuale next', iActiveSlide)
 
-  if (iActiveSlide < slideElements.length-1){
+  if (iActiveSlide < slideElements.length-1){ //la slide attiva deve essere < alla lunghezza dell'array - 1
     let currentSlide = slideElements[iActiveSlide]
     currentSlide.classList.remove('active')
     iActiveSlide += 1
@@ -51,10 +51,10 @@ rightBtnElement.addEventListener('click', function() {
 })
 
 
-leftBtnElement.addEventListener('click', function() {
+leftBtnElement.addEventListener('click', function() { //la slide attiva deve essere >= a 1 della slide attiva
   console.log('slide attuale back', iActiveSlide)
   
-  if (iActiveSlide >= 1){
+  if (iActiveSlide > 0){
     let currentSlide = slideElements[iActiveSlide]
     currentSlide.classList.remove('active')
     iActiveSlide -= 1
@@ -63,4 +63,31 @@ leftBtnElement.addEventListener('click', function() {
   }
 
 })
+
+// PARTE DUE, INSERIMENTO CON JS DELLE IMMAGINI
+
+//creo IL PRIMO DIV SLIDE ACTIVE
+
+
+// aggiungere immagine dentro il DIV creato QUI SOPRA
+
+
+// FATTO, ora deve ripetersi per 5 volte, procedere con un ciclo for?
+
+for (i = 0; i < 6; i++ ) {
+  
+  const divAdd = document.createElement('div');
+  divAdd.className = 'slide active';
+  divAdd.id = 'slide';
+  
+  
+  document.getElementById('carousel').appendChild(divAdd)
+  
+  const img = document.createElement("img");
+  img.src = "./img/image1.0.jpg";
+  document.getElementById('slide').appendChild(img);
+  
+
+
+}
 
