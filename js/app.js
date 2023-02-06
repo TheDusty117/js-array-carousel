@@ -38,48 +38,29 @@ console.log(leftBtnElement, rightBtnElement)
 //NB per poter dare un event listener a quanto pare devo usare solo un querySelector per prendere la
 //classe giusta dell'elemento HTML
 rightBtnElement.addEventListener('click', function() {
-  console.log('slide attuale', iActiveSlide)
+  console.log('slide attuale next', iActiveSlide)
 
-  //dichiaro che currentSlide = a slideElements con indice di valore iActiveSlide ovvero 0------
-  let currentSlide = slideElements[iActiveSlide]
-  
-  // togliere la classe active dalla prima slide
-  currentSlide.classList.remove('active')
-
-  //incrementare indice per farla passare alla prossima
-  iActiveSlide += 1
-
-  //dichiaro che nextSlide = a slideElements[iActiveSlide] e verra' aggiunto incremento qui sopra ad iActiveSlide,
-  //che aumentera' ogni volta al click di 1 facendo scorrere le immagini
-
-  let nextSlide = slideElements[iActiveSlide]
-
-  //aggiungere la classe active tolta in precedenza -vedi su- remove
-
-  nextSlide.classList.add('active')
-  
-  let indexEnough= ''
-
-  if (iActiveSlide < iActiveSlide[6]) {
-    iActiveSlide = indexEnough
+  if (iActiveSlide < slideElements.length-1){
+    let currentSlide = slideElements[iActiveSlide]
+    currentSlide.classList.remove('active')
+    iActiveSlide += 1
+    let nextSlide = slideElements[iActiveSlide]
+    nextSlide.classList.add('active')
   }
 
 })
 
 
-
-// FUNZIONALITA' AL CLICK DEL BOTTONE SINISTRO (PER ANDARE INDIETRO)
-// stesso processo inverso, ovvero sottrarre la classe 'active' e aggiungerla all'elemento precedente
-
-// leftBtnElement.addEventListener('click', function() {
+leftBtnElement.addEventListener('click', function() {
+  console.log('slide attuale back', iActiveSlide)
   
-//   let currentSlide = slideElements[iActiveSlide]
+  if (iActiveSlide >= 1){
+    let currentSlide = slideElements[iActiveSlide]
+    currentSlide.classList.remove('active')
+    iActiveSlide -= 1
+    let nextSlide = slideElements[iActiveSlide]
+    nextSlide.classList.add('active')
+  }
 
-//   currentSlide.classList.remove('active')
+})
 
-//   iActiveSlide -= 1
-
-//   let previousSlide = slideElements[iActiveSlide]
-
-//   previousSlide.classList.add('active')
-// })
