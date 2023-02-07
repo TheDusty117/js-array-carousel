@@ -24,7 +24,28 @@ let currentIndex = 0
 //e prendere le due chevron, su queste ultime dovro' dargli un event listener, che al click mi faranno
 //compiere un'azione.
 
+for (i = 0; i < slides.length; i++ ) { //CREO IL CICLO E CREO ELEMENTI --PRIMA-------------------------
+                                      //   DELLA DICHIARAZIONE SLIDEELEMENTS
+                                      // perche' ovviamente slideelements non puo'
+                                      // dichiarare se non creo prima tutto nel ciclo.
+  
+  const divAdd = document.createElement('div');
+
+
+  divAdd.className = 'slide';
+  
+  
+  document.getElementById('carousel').appendChild(divAdd)
+  
+  const img = document.createElement("img");
+  img.src = slides[i];
+  divAdd.appendChild(img);
+  
+}
+
 const slideElements = document.getElementsByClassName('slide') //prendo tutti gli elementi con classe slide.
+slideElements[0].classList.add('active')
+
 
 const leftBtnElement = document.getElementById('arrow-left')
 
@@ -61,9 +82,12 @@ leftBtnElement.addEventListener('click', function() { //la slide attiva deve ess
   console.log('slide back', currentIndex)
   
   if (currentIndex > 0){
+
     let currentSlide = slideElements[currentIndex]
     currentSlide.classList.remove('active')
+
     currentIndex -= 1
+
     let nextSlide = slideElements[currentIndex]
     nextSlide.classList.add('active')
   }
@@ -84,88 +108,98 @@ leftBtnElement.addEventListener('click', function() { //la slide attiva deve ess
 // ad esempio slide0 slide1 slide2 slide3 slide4 slide5, in modo da generare tramite id 5 div diversi con img scrn DIVERSA e
 // conseguente link alla cartella e poi all'immagine.
 
-for (i = 0; i < 1; i++ ) {
+
+
+// for (i = 0; i < 1; i++ ) {
   
-  const divAdd = document.createElement('div');
-  divAdd.className = 'slide active';
-  divAdd.id = 'slide0';
+//   const divAdd = document.createElement('div');
+//   divAdd.className = 'slide';
+//   divAdd.id = 'slide1';
   
   
-  document.getElementById('carousel').appendChild(divAdd)
+//   document.getElementById('carousel').appendChild(divAdd)
   
-  const img = document.createElement("img");
-  img.src = "./img/image1.0.jpg";
-  document.getElementById('slide0').appendChild(img);
+//   const img = document.createElement("img");
+//   img.src = "./img/image2.0.jpg";
+//   document.getElementById('slide1').appendChild(img);
   
 
 
-}
+// }
 
-for (i = 0; i < 1; i++ ) {
+// for (i = 0; i < 1; i++ ) {
   
-  const divAdd = document.createElement('div');
-  divAdd.className = 'slide';
-  divAdd.id = 'slide1';
-  
-  
-  document.getElementById('carousel').appendChild(divAdd)
-  
-  const img = document.createElement("img");
-  img.src = "./img/image2.0.jpg";
-  document.getElementById('slide1').appendChild(img);
-  
-
-
-}
-
-for (i = 0; i < 1; i++ ) {
-  
-  const divAdd = document.createElement('div');
-  divAdd.className = 'slide';
-  divAdd.id = 'slide2';
+//   const divAdd = document.createElement('div');
+//   divAdd.className = 'slide';
+//   divAdd.id = 'slide2';
   
   
-  document.getElementById('carousel').appendChild(divAdd)
+//   document.getElementById('carousel').appendChild(divAdd)
   
-  const img = document.createElement("img");
-  img.src = "./img/image3.0.jpg";
-  document.getElementById('slide2').appendChild(img);
+//   const img = document.createElement("img");
+//   img.src = "./img/image3.0.jpg";
+//   document.getElementById('slide2').appendChild(img);
   
 
 
-}
+// }
 
-for (i = 0; i < 1; i++ ) {
+// for (i = 0; i < 1; i++ ) {
   
-  const divAdd = document.createElement('div');
-  divAdd.className = 'slide';
-  divAdd.id = 'slide3';
-  
-  
-  document.getElementById('carousel').appendChild(divAdd)
-  
-  const img = document.createElement("img");
-  img.src = "./img/image4.0.jpg";
-  document.getElementById('slide3').appendChild(img);
-  
-
-
-}
-
-for (i = 0; i < 1; i++ ) {
-  
-  const divAdd = document.createElement('div');
-  divAdd.className = 'slide';
-  divAdd.id = 'slide4';
+//   const divAdd = document.createElement('div');
+//   divAdd.className = 'slide';
+//   divAdd.id = 'slide3';
   
   
-  document.getElementById('carousel').appendChild(divAdd)
+//   document.getElementById('carousel').appendChild(divAdd)
   
-  const img = document.createElement("img");
-  img.src = "./img/image5.0.jpg";
-  document.getElementById('slide4').appendChild(img);
+//   const img = document.createElement("img");
+//   img.src = "./img/image4.0.jpg";
+//   document.getElementById('slide3').appendChild(img);
   
 
 
-}
+// }
 
+// for (i = 0; i < 1; i++ ) {
+  
+//   const divAdd = document.createElement('div');
+//   divAdd.className = 'slide';
+//   divAdd.id = 'slide4';
+  
+  
+//   document.getElementById('carousel').appendChild(divAdd)
+  
+//   const img = document.createElement("img");
+//   img.src = "./img/image5.0.jpg";
+//   document.getElementById('slide4').appendChild(img);
+  
+
+
+// }
+
+
+// for (let i = 0; i < slides.length; i++) {
+//   // const scrImage = slides[i]
+//   // console.log(scrImage)
+
+//   // if(i === 0 ) {
+//   //   const htmlSlides = 
+//   //     `<div class="slide active">
+//   //       <img scr="${scrImage}" alt=""></img>
+//   //     </div>`
+//   // } else {
+
+//   //   htmlSlides =
+//   //   `<div class="slide">
+//   //     <img scr="${scrImage}" alt=""></img>
+//   //   </div>`
+//   // }
+
+//   let className = 'slide'
+//   if (i === 0) {
+//     className+= 'active'
+//   }
+
+//   cons
+// }
