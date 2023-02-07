@@ -18,7 +18,7 @@ console.log(slides)
 
 //definisco il punto di partenza tra le slides, ovvero la 0, quindi la prima dove si trova la classe ACTIVE
 
-let iActiveSlide = 0
+let currentIndex = 0
 
 //2 occorre prendere dal DOM gli elementi che dovranno interagire, quindi le varie slides con immagini
 //e prendere le due chevron, su queste ultime dovro' dargli un event listener, che al click mi faranno
@@ -26,25 +26,23 @@ let iActiveSlide = 0
 
 const slideElements = document.getElementsByClassName('slide') //prendo tutti gli elementi con classe slide.
 
-const leftBtnElement = document.querySelector('.arrow-left')
+const leftBtnElement = document.getElementById('arrow-left')
 
-const rightBtnElement = document.querySelector('.arrow-right')
+const rightBtnElement = document.getElementById('arrow-right')
 
 console.log(slideElements)
 console.log(leftBtnElement, rightBtnElement)
 
 // FUNZIONALITA' AL CLICK DEL BOTTONE DESTRO (PER ANDARE AVANTI)
 
-//NB per poter dare un event listener a quanto pare devo usare solo un querySelector per prendere la
-//classe giusta dell'elemento HTML
 rightBtnElement.addEventListener('click', function() {
-  console.log('slide attuale next', iActiveSlide)
-
-  if (iActiveSlide < slideElements.length-1){ //la slide attiva deve essere < alla lunghezza dell'array - 1
-    let currentSlide = slideElements[iActiveSlide]
+  console.log('slide next', currentIndex)
+//USO CONDIZIONE IF ovvero appena arriva al click 6 lei smettera' di andare avanti evitando di dare errore
+  if (currentIndex < slideElements.length-1){ //la slide attiva deve essere < alla lunghezza dell'array - 1
+    let currentSlide = slideElements[currentIndex]
     currentSlide.classList.remove('active')
-    iActiveSlide += 1
-    let nextSlide = slideElements[iActiveSlide]
+    currentIndex += 1
+    let nextSlide = slideElements[currentIndex]
     nextSlide.classList.add('active')
   }
 
@@ -52,13 +50,13 @@ rightBtnElement.addEventListener('click', function() {
 
 
 leftBtnElement.addEventListener('click', function() { //la slide attiva deve essere >= a 1 della slide attiva
-  console.log('slide attuale back', iActiveSlide)
+  console.log('slide back', currentIndex)
   
-  if (iActiveSlide > 0){
-    let currentSlide = slideElements[iActiveSlide]
+  if (currentIndex > 0){
+    let currentSlide = slideElements[currentIndex]
     currentSlide.classList.remove('active')
-    iActiveSlide -= 1
-    let nextSlide = slideElements[iActiveSlide]
+    currentIndex -= 1
+    let nextSlide = slideElements[currentIndex]
     nextSlide.classList.add('active')
   }
 
