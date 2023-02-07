@@ -38,10 +38,18 @@ console.log(leftBtnElement, rightBtnElement)
 rightBtnElement.addEventListener('click', function() {
   console.log('slide next', currentIndex)
 //USO CONDIZIONE IF ovvero appena arriva al click 6 lei smettera' di andare avanti evitando di dare errore
-  if (currentIndex < slideElements.length-1){ //la slide attiva deve essere < alla lunghezza dell'array - 1
+
+    //CONDIZIONE IF lunghezza dell'array -1 in modo tale da non dare erroe se vado oltre la sua LUNGHEZZA
+  if (currentIndex < slideElements.length-1){
+
+    //nascondere la slide attiva togliendo la classe 'active'
     let currentSlide = slideElements[currentIndex]
     currentSlide.classList.remove('active')
+
+    //incrementare l'indice
     currentIndex += 1
+
+    //spostare classe 'active' e mostrare la slide successiva
     let nextSlide = slideElements[currentIndex]
     nextSlide.classList.add('active')
   }
@@ -73,7 +81,7 @@ leftBtnElement.addEventListener('click', function() { //la slide attiva deve ess
 // FATTO, ora deve ripetersi per 5 volte, procedere con un ciclo for?
 
 //RIUSCITO!!! trial and error, ho dato un ciclo for per immagine, associando ad essa anche un id diverso,
-// ad esempio slide0 slide1 slide2 slide3 slide4 slide5, in modo da generare tramite id 5 div diversi con img scrn e
+// ad esempio slide0 slide1 slide2 slide3 slide4 slide5, in modo da generare tramite id 5 div diversi con img scrn DIVERSA e
 // conseguente link alla cartella e poi all'immagine.
 
 for (i = 0; i < 1; i++ ) {
